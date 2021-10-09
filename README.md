@@ -3,7 +3,7 @@ About psy-view
 
 Home: https://github.com/psyplot/psy-view
 
-Package license: GPL-3.0-only
+Package license: LGPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psy-view-feedstock/blob/master/LICENSE.txt)
 
@@ -11,7 +11,7 @@ Summary: ncview-like interface for psyplot
 
 Development: https://github.com/psyplot/psy-view
 
-Documentation: http://psyplot.readthedocs.io/projects/psy-view
+Documentation: http://psyplot.github.io/psy-view
 
 This package provides a graphical user interface to quickly visualize the
 contents of a netCDF file
