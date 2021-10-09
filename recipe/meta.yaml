@@ -1,6 +1,6 @@
 {% set name = "psy-view" %}
-{% set version = "0.1.0" %}
-{% set sha256 = "85a3a08dca1dfc95594308bb5d185aa8cc66cdc704981a267eec41a36cb16e5a" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "25d57c8fc784a662c89dae5672b22dc11b137ebefb39e7b4d8df358bb185e58e" %}
 
 package:
   name: {{ name|lower }}
