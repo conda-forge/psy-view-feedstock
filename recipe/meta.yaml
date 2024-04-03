@@ -1,6 +1,6 @@
 {% set name = "psy-view" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "25d57c8fc784a662c89dae5672b22dc11b137ebefb39e7b4d8df358bb185e58e" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "21fe4f6d30b762cb6bc2127668b27256bc62023213652772cf484e18883638d8" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - psy-view = psy_view:main
 
