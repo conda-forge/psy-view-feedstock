@@ -13,10 +13,9 @@ source:
 
 build:
   number: 0
+  skip: true # [py<39]
   entry_points:
     - psy-view = psy_view:main
-
-  skip: true  # [py == 36]
 
 requirements:
   build:
@@ -25,10 +24,13 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - versioneer
+    - tomli
   run:
     - python
-    - {{ pin_compatible('psyplot-gui', max_pin='x.x') }}
-    - {{ pin_compatible('psy-maps', max_pin='x.x') }}
+    - {{ pin_compatible('psyplot-gui', max_pin='x.x', lower_bound='1.5.0') }}
+    - {{ pin_compatible('psy-maps', max_pin='x.x', lower_bound='1.5.0') }}
     - netcdf4
 
 test:
@@ -46,19 +48,18 @@ app:
   type: desk
 
 about:
-  home: https://github.com/psyplot/psy-view
+  home: https://codebase.helmholtz.cloud/psyplot/psy-view
   license: LGPL-3.0-only
   license_family: GPL
   license_file:
-    - COPYING
-    - COPYING.LESSER
+    - LICENSES/
   summary: ncview-like interface for psyplot
 
   description: |
     This package provides a graphical user interface to quickly visualize the
     contents of a netCDF file
   doc_url: http://psyplot.github.io/psy-view
-  dev_url: https://github.com/psyplot/psy-view
+  dev_url: https://codebase.helmholtz.cloud/psyplot/psy-view
 
 extra:
   recipe-maintainers:
