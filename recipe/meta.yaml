@@ -1,6 +1,6 @@
 {% set name = "psy-view" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "25d57c8fc784a662c89dae5672b22dc11b137ebefb39e7b4d8df358bb185e58e" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "21fe4f6d30b762cb6bc2127668b27256bc62023213652772cf484e18883638d8" %}
 
 package:
   name: {{ name|lower }}
@@ -12,11 +12,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
+  skip: true  # [py<39]
   entry_points:
     - psy-view = psy_view:main
-
-  skip: true  # [py == 36]
 
 requirements:
   build:
@@ -25,10 +24,13 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - versioneer
+    - tomli
   run:
     - python
-    - {{ pin_compatible('psyplot-gui', max_pin='x.x') }}
-    - {{ pin_compatible('psy-maps', max_pin='x.x') }}
+    - {{ pin_compatible('psyplot-gui', max_pin='x.x', lower_bound='1.5.0') }}
+    - {{ pin_compatible('psy-maps', max_pin='x.x', lower_bound='1.5.0') }}
     - netcdf4
 
 test:
@@ -46,19 +48,18 @@ app:
   type: desk
 
 about:
-  home: https://github.com/psyplot/psy-view
+  home: https://codebase.helmholtz.cloud/psyplot/psy-view
   license: LGPL-3.0-only
   license_family: GPL
   license_file:
-    - COPYING
-    - COPYING.LESSER
+    - LICENSES/
   summary: ncview-like interface for psyplot
 
   description: |
     This package provides a graphical user interface to quickly visualize the
     contents of a netCDF file
   doc_url: http://psyplot.github.io/psy-view
-  dev_url: https://github.com/psyplot/psy-view
+  dev_url: https://codebase.helmholtz.cloud/psyplot/psy-view
 
 extra:
   recipe-maintainers:
